@@ -10,7 +10,7 @@
 ---
 
 ## Live Demo
-[**Try PaperMind here**](https://your-app-link.streamlit.app) ← *(update after deploying)*
+[**Try PaperMind here**](https://papermindgit.streamlit.app/)← *(update after deploying)*
 
 ---
 
@@ -120,14 +120,6 @@ Then open [http://localhost:8501](http://localhost:8501) in your browser.
 ## API Key
 
 Get a **free** Groq API key at [console.groq.com](https://console.groq.com) — takes under 2 minutes. Enter it in the app sidebar.
-
----
-
-## Author
-
-**Your Name**
-- GitHub: [@your-username](https://github.com/your-username)
-- LinkedIn: [linkedin.com/in/your-profile](https://linkedin.com/in/your-profile)
 
 ---
 
