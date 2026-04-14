@@ -372,7 +372,7 @@ if uploaded:
             if st.button("✨ Generate Summary", key="summarize"):
                 with st.spinner("Reading and summarizing the paper..."):
                     try:
-                        summary = generate_summary(client, st.session_state.meta["full_text"])
+                        summary = generate_summary(client, st.session_state.chunks)
                         st.session_state.summary = summary
                         st.rerun()
                     except Exception as e:
