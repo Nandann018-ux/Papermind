@@ -38,7 +38,7 @@ st.markdown("""
     html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
 
     /* Hide Streamlit default header */
-    #MainMenu, footer, header { visibility: hidden; }
+    #MainMenu, footer { visibility: hidden; }
 
     /* Main background */
     .stApp { background-color: #0f1117; }
