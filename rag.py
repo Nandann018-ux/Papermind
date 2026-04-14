@@ -134,16 +134,24 @@ Answer:"""
     )
     return response.choices[0].message.content
 
-
-def generate_summary(client, text: str) -> str:
-    """
-    Generate a concise summary of the research paper.
-    Uses the first ~2000 words to stay within token limits.
-    """
-    excerpt = " ".join(text.split()[:2000])
+def generate_summary(client, chunks: list[str]) -> str:
+    """Generate a structured summary using spread chunks from the full document."""
+    
+    # Pick chunks spread across the whole paper (start, middle, end)
+    total = len(chunks)
+    indices = list(set([
+        0, 1,
+        total // 4,
+        total // 2,
+        3 * total // 4,
+        total - 2,
+        total - 1,
+    ]))
+    selected = [chunks[i] for i in sorted(indices) if i < total]
+    context = "\n\n---\n\n".join(selected)
 
     prompt = f"""You are PaperMind, an AI research assistant.
-Summarize the following research paper excerpt in a structured way.
+Summarize this research paper using the sections provided.
 
 Provide:
 1. **Title / Topic** (inferred if not explicit)
@@ -152,10 +160,8 @@ Provide:
 4. **Methods Used** (brief)
 5. **Main Findings** (2-3 bullet points)
 
-Be concise and use simple language.
-
-Paper Excerpt:
-{excerpt}
+Paper Sections:
+{context}
 
 Summary:"""
 
@@ -163,6 +169,6 @@ Summary:"""
         model="llama-3.1-8b-instant",
         messages=[{"role": "user", "content": prompt}],
         temperature=0.2,
-        max_tokens=600,
+        max_tokens=700,
     )
     return response.choices[0].message.content
