@@ -10,7 +10,7 @@
 ---
 
 ## Live Demo
-[**Try PaperMind here**](https://papermindgit.streamlit.app/)← *(update after deploying)*
+[**Try PaperMind here**](https://papermindgit.streamlit.app/)
 
 ---
 
@@ -87,35 +87,6 @@ papermind/
 ├── .gitignore
 └── README.md
 ```
-
----
-
-## Run Locally
-
-```bash
-# Clone
-git clone https://github.com/your-username/papermind.git
-cd papermind
-
-# Install
-pip3 install -r requirements.txt
-
-# Run
-python3 -m streamlit run app.py
-```
-
-Then open [http://localhost:8501](http://localhost:8501) in your browser.
-
----
-
-## Deploy on Streamlit Cloud (Free)
-
-1. Push this repo to GitHub
-2. Go to [share.streamlit.io](https://share.streamlit.io)
-3. Connect your repo → set main file as `app.py`
-4. Click **Deploy**
-
----
 
 ## API Key
 
